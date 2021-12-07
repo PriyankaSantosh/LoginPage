@@ -18,7 +18,7 @@ public static void main(String[] args) throws InterruptedException {
 	driver.findElement(By.id("edit-submit")).click();
 	driver.findElement(By.xpath("(//a[@class='specialmenuitem'])[21]")).click();
 	driver.findElement(By.xpath("(//a[@href='/item-list'])[1]")).click();
-	Thread.sleep(1000);
+	Thread.sleep(2000);
 	driver.findElement(By.xpath("(//td[@class='views-field views-field-title']/a)[1]")).click();
 	driver.findElement(By.xpath("//a[text()='Edit']")).click();
 	

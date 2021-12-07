@@ -13,6 +13,7 @@ public static void main(String[] args) {
 	WebDriver driver=new ChromeDriver();
 	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	driver.get("http://dev.ebloodbanking.com/");
+	
 	driver.manage().window().maximize();
 	driver.findElement(By.id("edit-name")).sendKeys("test_admin");
 	driver.findElement(By.id("edit-pass")).sendKeys("test_admin6767!");
