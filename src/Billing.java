@@ -104,10 +104,10 @@ driver.findElement(By.xpath("//a[text()='Logout']")).click();
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			driver.get("http://dev.ebloodbanking.com/");
 			driver.manage().window().maximize();
-			driver.findElement(By.id("edit-name")).sendKeys("vamsy");
-			driver.findElement(By.id("edit-pass")).sendKeys("vamsy");
+			driver.findElement(By.id("edit-name")).sendKeys("PriyankaGK");
+			driver.findElement(By.id("edit-pass")).sendKeys("PriyankaGK");
 			driver.findElement(By.id("edit-submit")).click();
-			driver.findElement(By.xpath("//a[text()='Welcome Vamsy']")).click();
+			driver.findElement(By.xpath("//a[text()='Welcome PriyankaGK']")).click();
 			driver.findElement(By.xpath("(//a[text()='Test Blood Bank'])[1]")).click();
 			driver.findElement(By.xpath("(//a[text()='Edit'])[1]")).click();
 			driver.findElement(By.xpath("//a[@href='#edit-group_centre_misc_manage']")).click();
@@ -201,7 +201,7 @@ driver.findElement(By.xpath("//a[text()='Logout']")).click();
 			          String  dd=dateFormat.format(date);
 			          System.out.println(dd);
 			          
-			          DateFormat dateFormat11 = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+			          DateFormat dateFormat11 = new SimpleDateFormat("dd/MM/yyyyHH:mm:ss");
 			            
 			            //get current date time with Date()
 			            
@@ -213,7 +213,7 @@ driver.findElement(By.xpath("//a[text()='Logout']")).click();
 					          
 
 						driver.findElement(By.xpath("//input[@class='text-full form-control form-text required']")).sendKeys(dd1);
-						driver.findElement(By.xpath("//input[@id='edit-field-donor-name-und-0-value']")).sendKeys("Anusha");
+						driver.findElement(By.xpath("//input[@id='edit-field-donor-name-und-0-value']")).sendKeys("test44444");
 						
 						driver.findElement(By.xpath("//select[@id='edit-field-blood-group-und']")).click();
 						driver.findElement(By.xpath("//option[@value='A1 Neg']")).click();
@@ -273,7 +273,7 @@ driver.findElement(By.xpath("//a[text()='Logout']")).click();
 						executor1.executeScript("arguments[0].click();", ele1);
 
 						driver.findElement(By.xpath("//select[@id='edit-field-donor-doctor-und']")).click();
-						driver.findElement(By.xpath("//option[@value='4973']")).click();
+						driver.findElement(By.xpath("//option[@value='277']")).click();
 
 
 						driver.findElement(By.xpath("//input[@id='edit-field-weight-und-0-value']")).sendKeys("45");
@@ -297,31 +297,45 @@ driver.findElement(By.xpath("//a[text()='Logout']")).click();
 						JavascriptExecutor executor2 = (JavascriptExecutor)driver;
 						executor2.executeScript("arguments[0].click();", ele2);
 						
+						driver.findElement(By.xpath("//input[@id='edit-field-date-of-collection-und-0-value-datepicker-popup-0']")).click();
+						driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
-						driver.findElement(By.xpath("//input[@id='edit-field-date-of-collection-und-0-value-datepicker-popup-0']")).sendKeys(dd);
+						 WebElement we = driver.findElement(By.xpath("//*[@id=\"ui-datepicker-div\"]/table/tbody/tr[2]/td[3]/a"));
+
+						Actions action11=new Actions(driver);
+						action11.moveToElement( we).click().perform();
+						
+						
+
+					//	driver.findElement(By.xpath("//input[@id='edit-field-date-of-collection-und-0-value-datepicker-popup-0']")).sendKeys(dd);
 						driver.findElement(By.xpath("//input[@id='edit-field-date-of-collection-und-0-value-timeEntry-popup-1']")).sendKeys("11:50am");
 
 						driver.findElement(By.xpath("//input[@id='edit-field-bag-no-und-0-value']")).sendKeys("65");
 						driver.findElement(By.xpath("//input[@id='edit-field-batch-no-und-0-value']")).sendKeys("65");
-						driver.findElement(By.xpath("//input[@id='edit-field-donor-segment-number-und-0-value']")).sendKeys("65");
+						driver.findElement(By.xpath("//input[@id='edit-field-donor-segment-number-und-0-value']")).sendKeys("retest65");
 
 						driver.manage().timeouts().implicitlyWait(90,TimeUnit.SECONDS);
 
 
-						driver.findElement(By.xpath("//select[@id='edit-field-type-of-bag-und']")).click();
-						driver.findElement(By.xpath("//option[@value='5074']")).click();
-
+						driver.findElement(By.xpath("//div[@id='edit_field_type_of_bag_und_chosen']")).click();
+						driver.findElement(By.xpath("//li[text()='  Triple CPDA SAGM 450ml ']")).click();
 						driver.manage().timeouts().implicitlyWait(90,TimeUnit.SECONDS);
 
+						
+						WebElement we1 = driver.findElement(By.xpath("//select[@id='edit-field-components-to-be-prepared-und--2']"));
 
-						driver.findElement(By.xpath("//select[@id='edit-field-components-to-be-prepared-und']")).click();
+						Actions b=new Actions(driver);
+						b.moveToElement( we1).click().perform();
+
+
+						//driver.findElement(By.xpath("//select[@id='edit-field-components-to-be-prepared-und']")).click();
 						driver.findElement(By.xpath("//option[text()='PC, FFP']")).click();
 
 						driver.manage().timeouts().implicitlyWait(90,TimeUnit.SECONDS);
 
 
 						driver.findElement(By.xpath("//select[@id='edit-field-er-technician-und']")).click();
-						driver.findElement(By.xpath("(//option[text()='  anushka '])[2]")).click();
+						driver.findElement(By.xpath("(//option[text()='  serology '])[1]")).click();
 
 						WebElement ele11 = driver.findElement(By.id("edit-submit"));
 						JavascriptExecutor executor11 = (JavascriptExecutor)driver;

@@ -25,9 +25,9 @@ static{
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		//driver.findElement(By.xpath("(//a[@class='specialmenuitem'])[11]")).click();
 		//driver.findElement(By.xpath("//a[@href='/PatientList']")).click();
-		driver.get("http://dev.ebloodbanking.com/node/1884185");
-		driver.findElement(By.xpath("//a[text()='Add New Requirement For This Patient']")).click();
-		driver.findElement(By.xpath("//input[@name='field_patient_id[und][0][value]']")).sendKeys("123456");		
+	//	driver.get("http://dev.ebloodbanking.com/node/1884185");
+	//	driver.findElement(By.xpath("//a[text()='Add New Requirement For This Patient']")).click();
+	//	driver.findElement(By.xpath("//input[@name='field_patient_id[und][0][value]']")).sendKeys("123456");		
 	
 }
 	

@@ -29,8 +29,8 @@ driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		/*driver.findElement(By.xpath("//select[@id='edit-field-donor-entry-type-und']")).click();
 		driver.findElement(By.xpath("//option[@value='Full']")).click();*/
 
-		driver.findElement(By.xpath("//input[@class='text-full form-control form-text required']")).sendKeys("soma271");//unique
-		driver.findElement(By.xpath("//input[@id='edit-field-donor-name-und-0-value']")).sendKeys("soma271");//unique
+		driver.findElement(By.xpath("//input[@class='text-full form-control form-text required']")).sendKeys("retest12355");//unique
+		driver.findElement(By.xpath("//input[@id='edit-field-donor-name-und-0-value']")).sendKeys("test125865");//unique
 		//driver.findElement(By.xpath("(//select[@class='form-control form-select'])[2]")).click(By.xpath("//option[@value='A1 Pos']"));
 
 		driver.findElement(By.xpath("//select[@id='edit-field-blood-group-und']")).click();
@@ -72,7 +72,7 @@ driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.findElement(By.xpath("//option[@value='Camp']")).click();
 
 		driver.findElement(By.xpath("//div[@id='edit_field_blood_donation_camp_und_0_nid_chosen']")).click();
-		driver.findElement(By.xpath("//li[text()='Soft Bank Private Limited 31-Jan-2019']")).click();
+		driver.findElement(By.xpath("//li[text()='RSS-Sevak 28-Jun-2021']")).click();
 
 		driver.findElement(By.xpath("//input[@value='Yes']")).click();
 
@@ -97,7 +97,7 @@ driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		executor1.executeScript("arguments[0].click();", ele1);
 
 		driver.findElement(By.xpath("//select[@id='edit-field-donor-doctor-und']")).click();
-		driver.findElement(By.xpath("//option[@value='4973']")).click();
+		driver.findElement(By.xpath("//option[@value='277']")).click();
 
 
 		driver.findElement(By.xpath("//input[@id='edit-field-weight-und-0-value']")).sendKeys("45");
@@ -130,31 +130,41 @@ driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		WebElement send = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='edit-field-date-of-collection-und-0-value-datepicker-popup-0']")));
 		send.click();*/
 
+		
+		driver.findElement(By.xpath("//input[@id='edit-field-date-of-collection-und-0-value-datepicker-popup-0']")).click();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
-		driver.findElement(By.xpath("//input[@id='edit-field-date-of-collection-und-0-value-datepicker-popup-0']")).sendKeys("5 Mar 2019");
+		 WebElement we = driver.findElement(By.xpath("//*[@id=\"ui-datepicker-div\"]/table/tbody/tr[2]/td[3]/a"));
+
+		Actions action11=new Actions(driver);
+		action11.moveToElement( we).click().perform();
+		
+		
+
+	//	driver.findElement(By.xpath("//input[@id='edit-field-date-of-collection-und-0-value-datepicker-popup-0']")).sendKeys("5 Mar 2019");
 		driver.findElement(By.xpath("//input[@id='edit-field-date-of-collection-und-0-value-timeEntry-popup-1']")).sendKeys("11:50pm");
 
 		driver.findElement(By.xpath("//input[@id='edit-field-bag-no-und-0-value']")).sendKeys("65");
 		driver.findElement(By.xpath("//input[@id='edit-field-batch-no-und-0-value']")).sendKeys("65");
-		driver.findElement(By.xpath("//input[@id='edit-field-donor-segment-number-und-0-value']")).sendKeys("65");
+		driver.findElement(By.xpath("//input[@id='edit-field-donor-segment-number-und-0-value']")).sendKeys("retest1234565");
 
 		driver.manage().timeouts().implicitlyWait(90,TimeUnit.SECONDS);
 
 
-		driver.findElement(By.xpath("//select[@id='edit-field-type-of-bag-und']")).click();
-		driver.findElement(By.xpath("//option[@value='1884776']")).click();
+		driver.findElement(By.xpath("//div[@id='edit_field_type_of_bag_und_chosen']")).click();
+		driver.findElement(By.xpath("//li[text()='  Triple CPDA SAGM 450ml ']")).click();
 
 		driver.manage().timeouts().implicitlyWait(90,TimeUnit.SECONDS);
 
 
-		driver.findElement(By.xpath("//select[@id='edit-field-components-to-be-prepared-und']")).click();
+		driver.findElement(By.xpath("//select[@id='edit-field-components-to-be-prepared-und--2']")).click();
 		driver.findElement(By.xpath("//option[text()='PC, FFP']")).click();
 
 		driver.manage().timeouts().implicitlyWait(90,TimeUnit.SECONDS);
 
 
-		driver.findElement(By.xpath("//select[@id='edit-field-er-technician-und']")).click();
-		driver.findElement(By.xpath("(//option[text()='  anushka '])[2]")).click();
+	//	driver.findElement(By.xpath("//select[@id='edit-field-er-technician-und']")).click();
+	//	driver.findElement(By.xpath("(//option[text()='  anushka '])[2]")).click();
 
 		WebElement ele11 = driver.findElement(By.id("edit-submit"));
 		JavascriptExecutor executor11 = (JavascriptExecutor)driver;
@@ -176,5 +186,6 @@ driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		WebElement ele111 = driver.findElement(By.id("edit-submit"));
 		JavascriptExecutor executor111 = (JavascriptExecutor)driver;
 		executor111.executeScript("arguments[0].click();", ele111);
+		
 		driver.get("http://dev.ebloodbanking.com/inventory/transactions");
 }}

@@ -35,13 +35,29 @@ public static void main(String[] args) throws InterruptedException {
 	WebDriverWait wait = new WebDriverWait(driver, 500);// 1 minute 
 	wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("a[ui-state-default ui-state-highlight]"))).click();*/
 	
-	driver.findElement(By.xpath("//div[@id='edit_field_item_und_chosen']")).click();
-	WebElement element = driver.findElement(By.xpath("//span[contains(text(),'BLOOD')]"));
-	Actions action = new Actions(driver);
-	action.moveToElement(element).click().perform();
+	driver.findElement(By.xpath("//input[@id='edit-field-transaction-date-und-0-value-datepicker-popup-0']")).click();
+	driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+	 WebElement we = driver.findElement(By.xpath("//*[@id=\"ui-datepicker-div\"]/table/tbody/tr[2]/td[3]/a"));
+
+	Actions action=new Actions(driver);
+	action.moveToElement( we).click().perform();
+	
+
+
+WebDriverWait wait1=new WebDriverWait(driver,20);
+wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='edit_field_item_und_chosen']")));
+driver.findElement(By.xpath("//div[@id='edit_field_item_und_chosen']")).click();
+	
+	
+	
+//	driver.findElement(By.xpath("//div[@id='edit_field_item_und_chosen']")).click();
+	WebElement element = driver.findElement(By.xpath("//li[text()='350 ml Double CPDA']"));
+	Actions action1 = new Actions(driver);
+	action1.moveToElement(element).click().perform();
 	//driver.findElement(By.xpath("//span[contains(text(),'BLOOD')]")).click();
 	driver.findElement(By.xpath("//input[@id='edit-field-item-quantity-und-0-value']")).sendKeys("8");
-	//driver.findElement(By.xpath(""));
+	driver.findElement(By.id("edit-submit")).click();
 
 	
 }
