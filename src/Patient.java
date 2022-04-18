@@ -17,10 +17,10 @@ public class Patient {
 		public static void main(String[] args) throws InterruptedException{
 		WebDriver driver=new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.get("http://dev.ebloodbanking.com/");
+		driver.get("http://dev8.ebloodbanking.com/");
 		driver.manage().window().maximize();
-		driver.findElement(By.id("edit-name")).sendKeys("test_admin");
-		driver.findElement(By.id("edit-pass")).sendKeys("test_admin6767!");
+		driver.findElement(By.id("edit-name")).sendKeys("PriyankaGK");
+		driver.findElement(By.id("edit-pass")).sendKeys("PriyankaGK");
 		driver.findElement(By.id("edit-submit")).click();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.findElement(By.xpath("(//a[@class='specialmenuitem'])[11]")).click();
